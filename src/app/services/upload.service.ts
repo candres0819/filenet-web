@@ -2,11 +2,13 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpEventType, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
 
-const url = 'http://localhost:8000/upload';
+const url = 'http://localhost:8080/filenet/api/v1/upload-excel-file';
 
 @Injectable()
 export class UploadService {
+
   constructor(private http: HttpClient) {
+
   }
 
   public upload(files: Set<File>): { [key: string]: Observable<number> } {
